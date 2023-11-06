@@ -4,6 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../dist/styles/output.css" />
+        <script
+            type="text/javascript"
+            src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
         <title>Superstore Data Visualization Dashboard</title>
     </head>
     <body class="">
@@ -12,7 +16,7 @@
         </div>
         <div class="rounded">
             <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">Basic Info</div>
+                <div class="font-bold text-xl mb-2">Team Information</div>
                 <p class="text-gray-800 text-base">
                     The project title is
                     <b>Superstore Data Visualization Dashboard.</b> Our names
@@ -33,7 +37,21 @@
                         >click here.</a
                     >
                 </p>
+                <div class="m-2">
+                    <hr />
+                </div>
+                <div class="font-bold text-xl mb-2">Sales vs Profit Plot</div>
+                <div class="m-2 p-2">
+                    <label for="Year">Year:</label>
+                    <select
+                        style="text-align: center"
+                        id="selectButton"></select>
+                </div>
+
+                <div style="text-align: center" id="myscatterplot"></div>
+                <br />
             </div>
         </div>
+        <script src="./script.js"></script>
     </body>
 </html>
