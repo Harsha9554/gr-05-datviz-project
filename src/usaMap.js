@@ -99,7 +99,7 @@ var app = new Vue({
     },
     methods: {
         buttonClass() {
-            return "p-2 m-2 text-gray-800 bg-slate-800";
+            return "p-2 m-2 text-gray-800 bg-orange-500";
         },
         drawMap() {
             var width =

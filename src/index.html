@@ -25,7 +25,7 @@
 
 <body>
     <div id="app">
-        <div class="text-3xl text-gray-800 p-2 m-2 bg-slate-400 rounded-sm">
+        <div class="text-3xl text-gray-800 p-2 m-2 bg-orange-400 rounded-sm">
             Superstore Data Visualization Dashboard
         </div>
         <div class="p-2 m-2">
@@ -34,8 +34,7 @@
                 <select v-model="selectedYear" @change="setYear(selectedYear)" class=" text-xl">
                     <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
                 </select>
-                <button id="button-All" @click="setYear('All')"
-                    style="background-color: slategray; padding: 10px; border-radius: 4px;">
+                <button class="p-2 m-2 bg-orange-400 rounded-sm " id="button-All" @click="setYear('All')" style="">
                     All
                 </button>
                 <br>
@@ -48,25 +47,52 @@
                 <label for="sales">Sales</label>
             </span>
         </div>
-        <div id='maparea'>
-            <div style="position: relative; width: 600px; height: 400px;">
-                <div id='svg-container' style="width: 100%; height: 100%;">
-                    <svg width="100%" height="100%" viewBox="0 0 1280 960" preserveAspectRatio="xMidYMid meet"
-                        id='map'></svg>
+        <div class="flex h-screen">
+            <div id='maparea' class="w-4/6 flex">
+                <div style="position: relative; width: 1280px; height: 960px;">
+                    <div id='svg-container' class="flex-grow" style="width: 100%; height: 100%; margin: 0px 50px">
+                        <svg width="100%" height="100%" viewBox="0 0 1280 960" preserveAspectRatio="xMidYMid meet"
+                            id='map'></svg>
+                    </div>
+                    <div id='legend' class="w-1/4" style="position: absolute; top: 150px; right: -30px;"></div>
                 </div>
-                <div id='legend' style="position: absolute; top: 50px; right: -50px;"></div>
+            </div>
+            <div class="m-2 p-2 text-xl w-2/6" id="the-scatter-plot-id">
+                <label for="Year">Year:</label>
+                <select style="text-align: center" id="selectButton"></select>
+                <div style="text-align: center" id="myscatterplot"></div>
             </div>
         </div>
-        <div class="m-2 p-2 text-xl" id="the-scatter-plot-id">
-            <label for="Year">Year:</label>
-            <select style="text-align: center" id="selectButton"></select>
-            <div style="text-align: center" id="myscatterplot"></div>
-        </div>
+        <span></span>
+        <!-- <div class="flex h-screen">
+            <div id='maparea' class="w-1/2 flex">
+                <!-- <div id='svg-container' class="flex-grow">
+                    <svg id="map"></svg>
+                </div> -->
+        <!-- <div style="position: relative; width: 600px; height: 400px;">
+                    <div id='svg-container' class=flex-grow"" style="width: 100%; height: 100%;">
+                        <svg width="100%" height="100%" viewBox="0 0 1280 960" preserveAspectRatio="xMidYMid meet"
+                            id='map'></svg>
+                    </div>
+                    <div id='legend' class="w-1/4">
+                    </div>
+                </div> -->
+        <!-- </div>
+            <div class="m-2 p-2 text-xl w-1/2" id="the-scatter-plot-id">
+                <label for="Year">Year:</label>
+                <select style="text-align: center" id="selectButton"></select>
+                <div style="text-align: center" id="myscatterplot"></div>
+            </div>
+        </div> -->
+
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/billboard.js/3.10.3/billboard.min.js'
+        integrity='sha512-DDZ9iKsJXSMtsRhFxhiyvAPgzzuax98I/O9aSWIXbysd2rlWzlYwmhKgPL9roH9jfbCkmhl7V0xqiha8jmWRAA=='
+        crossorigin='anonymous'></script>
     <script type="text/javascript" src="./usaMap.js"></script>
     <script type="text/javascript" src="./scatterPlot.js"></script>
 </body>
