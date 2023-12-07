@@ -1,59 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../dist/styles/output.css" />
-        <script
-            type="text/javascript"
-            src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-        <title>Superstore Data Visualization Dashboard</title>
-    </head>
-    <body class="">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../dist/styles/output.css" /> -->
+    <link rel="stylesheet" href="../dist/styles/index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+
+            content: ["./src/**/*.{html,js}"],
+            theme: {
+                extend: {},
+                fontFamily: {
+                    sans: ["Onest", "Helvetica"],
+                },
+            },
+            plugins: [],
+
+        }
+    </script>
+    <title>Superstore Data Visualization Dashboard</title>
+</head>
+
+<body>
+    <div id="app">
         <div class="text-3xl text-gray-800 p-2 m-2 bg-slate-400 rounded-sm">
             Superstore Data Visualization Dashboard
         </div>
-        <div class="rounded">
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">Team Information</div>
-                <p class="text-gray-800 text-base">
-                    The project title is
-                    <b>Superstore Data Visualization Dashboard.</b> Our names
-                    are
-                    <b
-                        >Kanish Vijay Arunkumar, Sai Sriharsha Griddaluru, and
-                        Tejdeep Uckoo</b
-                    >. Our e-mail addresses are
-                    <b
-                        >kanish@clemson.edu, sgridda@clemson.edu, and
-                        tejdeep@clemson.edu.</b
-                    >
-                    Our CIDs are <b>C46866282, C15358926, and C51451099 </b>.
-                    The link to our project repository is
-                    <a
-                        class="underline"
-                        href="https://github.com/Harsha9554/gr-05-datviz-project"
-                        >click here.</a
-                    >
-                </p>
-                <div class="m-2">
-                    <hr />
-                </div>
-                <div class="font-bold text-xl mb-2">
-                    Sales vs Profit - Interactive Scatter Plot
-                </div>
-                <div class="m-2 p-2">
-                    <label for="Year">Year:</label>
-                    <select
-                        style="text-align: center"
-                        id="selectButton"></select>
-                </div>
+        <div class="p-2 m-2">
+            <span id='years-group' class="text-xl">
+                Years:
+                <select v-model="selectedYear" @change="setYear(selectedYear)" class="text-xl">
+                    <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
+                </select>
+                <button id="button-All" @click="setYear('All')"
+                    style="background-color: slategray; padding: 10px; border-radius: 4px;">
+                    All
+                </button>
+                <br>
+                <input type="radio" name="currentType" id="profit" value="profit" v-model="currentType"
+                    @change="setType('profit')">
+                <label for="profit">Profit</label>
 
-                <div style="text-align: center" id="myscatterplot"></div>
-                <br />
+                <input type="radio" name="currentType" id="sales" value="sales" v-model="currentType"
+                    @change="setType('sales')">
+                <label for="sales">Sales</label>
+            </span>
+        </div>
+        <div id='maparea'>
+            <div style="position: relative; width: 600px; height: 400px;">
+                <div id='svg-container' style="width: 100%; height: 100%;">
+                    <svg width="100%" height="100%" viewBox="0 0 1280 960" preserveAspectRatio="xMidYMid meet"
+                        id='map'></svg>
+                </div>
+                <div id='legend' style="position: absolute; top: 0; right: 0;"></div>
             </div>
         </div>
-        <script src="./script.js"></script>
-    </body>
+        <div class="m-2 p-2" id="the-scatter-plot-id">
+            <label for="Year">Year:</label>
+            <select style="text-align: center" id="selectButton"></select>
+        </div>
+
+        <div style="text-align: center" id="myscatterplot"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
+    <!-- <script type="text/javascript" src="./scatterPlot.js"></script> -->
+    <script type="text/javascript" src="./usaMap.js"></script>
+</body>
+
 </html>
