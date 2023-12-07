@@ -76,7 +76,7 @@ OrderID,Discount,UnitPrice,ShippingCost,CustomerID,CustomerName,ShipMode,Product
 45539,0.02,16.48,1.99,1413,Pamela Wiley,Express Air,Technology,Computer Peripherals,Maxell DVD-RAM Discs,East,Massachusetts,Boston,2113,2010/8/2,2010/8/4,69.61,484.56
 39972,0.03,6.3,0.5,3011,Tammy Raynor,Regular Air,Office Supplies,Labels,Avery 48,East,Massachusetts,Boston,2113,2013/9/25,2013/9/26,108.49,474.83
 37250,0.03,35.94,6.66,1413,Pamela Wiley,Regular Air,Office Supplies,Envelopes,"Tyvek ? Top-Opening Peel & Seel ? Envelopes, Gray",East,Massachusetts,Boston,2113,2011/1/14,2011/1/15,51.244,473.46
-11779,0.04,6.88,2,102,Caroline Johnston,Regular Air,Office Supplies,Paper,"Adams Phone Message Book, 200 Message Capacity, 8 1/16¡± x 11¡±",East,Massachusetts,Boston,2129,2011/6/29,2011/7/1,86.6,470.11
+11779,0.04,6.88,2,102,Caroline Johnston,Regular Air,Office Supplies,Paper,"Adams Phone Message Book, 200 Message Capacity, 8 1/16ï¿½ï¿½ x 11ï¿½ï¿½",East,Massachusetts,Boston,2129,2011/6/29,2011/7/1,86.6,470.11
 15009,0.08,7.78,2.5,1217,Billy Perry Browning,Express Air,Office Supplies,Envelopes,Staples #10 Colored Envelopes,East,Massachusetts,Boston,2112,2012/12/21,2012/12/22,61.09,458.86
 41350,0.01,419.19,19.99,1217,Billy Perry Browning,Regular Air,Office Supplies,Storage & Organization,Smead Adjustable Mobile File Trolley with Lockable Top,East,Massachusetts,Boston,2112,2011/5/8,2011/5/9,-259.01,423.3
 13735,0.02,7.64,1.39,1129,Pam Patton,Regular Air,Office Supplies,Envelopes,"#10- 4 1/8"" x 9 1/2"" Security-Tint Envelopes",East,Massachusetts,Boston,2118,2010/5/21,2010/5/23,117.38,406.91
@@ -231,7 +231,7 @@ OrderID,Discount,UnitPrice,ShippingCost,CustomerID,CustomerName,ShipMode,Product
 52737,0.03,7.68,6.16,94,Eddie House Mueller,Express Air,Office Supplies,Binders and Binder Accessories,GBC VeloBinder Strips,Central,Illinois,Chicago,60601,2011/11/8,2011/11/9,-15.7435,430.42
 29090,0.02,10.48,6.91,2403,Kara Gregory,Regular Air,Office Supplies,Storage & Organization,Sterilite Officeware Hinged File Box,Central,Illinois,Chicago,60699,2013/1/16,2013/1/16,-173.12,422.6
 28582,0.02,8.01,2.87,94,Eddie House Mueller,Regular Air,Office Supplies,Paper,"TOPS Money Receipt Book, Consecutively Numbered in Red,",Central,Illinois,Chicago,60601,2013/1/22,2013/1/23,35.184,419.23
-30883,0.1,6.98,1.6,94,Eddie House Mueller,Regular Air,Office Supplies,Paper,"Adams Phone Message Book, Professional, 400 Message Capacity, 5 3/6¡± x 11¡±",Central,Illinois,Chicago,60601,2013/8/21,2013/8/22,59.84,402.74
+30883,0.1,6.98,1.6,94,Eddie House Mueller,Regular Air,Office Supplies,Paper,"Adams Phone Message Book, Professional, 400 Message Capacity, 5 3/6ï¿½ï¿½ x 11ï¿½ï¿½",Central,Illinois,Chicago,60601,2013/8/21,2013/8/22,59.84,402.74
 22727,0.07,6.48,6.65,2107,Leigh Burnette Hurley,Regular Air,Office Supplies,Paper,Xerox 1966,Central,Illinois,Chicago,60601,2012/7/3,2012/7/3,-120.37,402.36
 32804,0.07,3.75,0.5,2107,Leigh Burnette Hurley,Regular Air,Office Supplies,Labels,Avery 510,Central,Illinois,Chicago,60601,2013/9/9,2013/9/10,74.82,367.46
 32806,0.02,6.68,5.2,2107,Leigh Burnette Hurley,Regular Air,Office Supplies,Paper,Xerox 1977,Central,Illinois,Chicago,60601,2012/6/21,2012/6/23,-45.29,362.01
@@ -497,7 +497,7 @@ OrderID,Discount,UnitPrice,ShippingCost,CustomerID,CustomerName,ShipMode,Product
 359,0.08,124.49,51.94,553,Kristine Connolly,Delivery Truck,Furniture,Tables,Bevis 36 x 72 Conference Tables,West,California,Los Angeles,90008,2010/12/18,2010/12/19,-500.38,6831.37
 37700,0.05,122.99,19.99,3004,Maurice Everett,Express Air,Office Supplies,Binders and Binder Accessories,GBC Therma-A-Bind 250T Electric Binding System,West,California,Los Angeles,90049,2013/12/8,2013/12/11,1169.7105,6781.02
 18373,0.09,207.48,0.99,3289,Emily Britt,Regular Air,Office Supplies,Appliances,Kensington 7 Outlet MasterPiece Power Center with Fax/Phone Line Protection,West,California,Los Angeles,90049,2013/4/12,2013/4/12,2164.64,6608.24
-32420,0.07,280.98,57,699,Jenny Gold,Delivery Truck,Furniture,Chairs & Chairmats,Hon 2090 ¡°Pillow Soft¡± Series Mid Back Swivel/Tilt Chairs,West,California,Los Angeles,90041,2010/7/29,2010/7/31,-439.62,6499.87
+32420,0.07,280.98,57,699,Jenny Gold,Delivery Truck,Furniture,Chairs & Chairmats,Hon 2090 ï¿½ï¿½Pillow Softï¿½ï¿½ Series Mid Back Swivel/Tilt Chairs,West,California,Los Angeles,90041,2010/7/29,2010/7/31,-439.62,6499.87
 28001,0.01,194.3,11.54,1044,Erin Ballard,Regular Air,Furniture,Office Furnishings,Electrix Halogen Magnifier Lamp,West,California,Los Angeles,90004,2010/6/14,2010/6/16,1162.76,6401.65
 35046,0.03,107.53,5.81,553,Kristine Connolly,Express Air,Furniture,Office Furnishings,"Tenex Contemporary Contur Chairmats for Low and Medium Pile Carpet, Computer, 39"" x 49""",West,California,Los Angeles,90008,2011/7/24,2011/7/25,1759.72,5941.63
 57638,0.09,217.85,29.1,699,Jenny Gold,Delivery Truck,Furniture,Tables,"Chromcraft Bull-Nose Wood Round Conference Table Top, Wood Base",West,California,Los Angeles,90041,2013/4/22,2013/4/27,-526.478095,5740.62
@@ -575,7 +575,7 @@ OrderID,Discount,UnitPrice,ShippingCost,CustomerID,CustomerName,ShipMode,Product
 57638,0.07,11.48,5.43,699,Jenny Gold,Regular Air,Office Supplies,Paper,Personal Creations? Ink Jet Cards and Labels,West,California,Los Angeles,90041,2013/4/22,2013/4/24,78.89,570.43
 18534,0.1,8.33,1.99,3289,Emily Britt,Express Air,Technology,Computer Peripherals,"80 Minute Slim Jewel Case CD-R , 10/Pack - Staples",West,California,Los Angeles,90049,2012/12/30,2012/12/30,21.68,565.16
 26695,0.01,8.34,1.43,1810,Denise Albright,Regular Air,Office Supplies,Paper,"REDIFORM Incoming/Outgoing Call Register, 11"" X 8 1/2"", 100 Messages",West,California,Los Angeles,90032,2011/6/6,2011/6/8,163.42,554.93
-21539,0.04,21.98,8.32,699,Jenny Gold,Regular Air,Office Supplies,Paper,Standard Line? ¡°While You Were Out¡± Hardbound Telephone Message Book,West,California,Los Angeles,90041,2013/7/9,2013/7/10,40.11,539.07
+21539,0.04,21.98,8.32,699,Jenny Gold,Regular Air,Office Supplies,Paper,Standard Line? ï¿½ï¿½While You Were Outï¿½ï¿½ Hardbound Telephone Message Book,West,California,Los Angeles,90041,2013/7/9,2013/7/10,40.11,539.07
 23877,0,10.01,1.99,2491,Sean N Boyer,Express Air,Technology,Computer Peripherals,TDK 4.7GB DVD-R,West,California,Los Angeles,90045,2010/7/12,2010/7/14,128.03,457.63
 29889,0.09,5.98,1.67,2548,Wayne Bass,Regular Air,Office Supplies,Pens & Art Supplies,"Dixon Ticonderoga? Erasable Colored Pencil Set, 12-Color",West,California,Los Angeles,90068,2010/12/4,2010/12/7,23.87,448.26
 49443,0.05,9.85,4.82,2491,Sean N Boyer,Regular Air,Office Supplies,Pens & Art Supplies,Lumber Crayons,West,California,Los Angeles,90045,2012/1/23,2012/1/24,-17.568,444.46
@@ -597,9 +597,9 @@ OrderID,Discount,UnitPrice,ShippingCost,CustomerID,CustomerName,ShipMode,Product
 56166,0.08,100.89,42,2491,Sean N Boyer,Delivery Truck,Furniture,Chairs & Chairmats,Office Star Flex Back Scooter Chair with Aluminum Finish Frame,West,California,Los Angeles,90045,2011/8/4,2011/8/5,-62.19,284.48
 22848,0.01,4.48,49,2491,Sean N Boyer,Regular Air,Office Supplies,Appliances,Hoover Portapower? Portable Vacuum,West,California,Los Angeles,90045,2012/12/10,2012/12/11,-893.39,280.74
 36647,0.01,7.89,2.82,699,Jenny Gold,Regular Air,Office Supplies,Rubber Bands,"Staples Vinyl Coated Paper Clips, 800/Box",West,California,Los Angeles,90041,2010/6/30,2010/7/1,38.7,274.26
-59686,0.01,5.8,5.59,3004,Maurice Everett,Regular Air,Office Supplies,Binders and Binder Accessories,Wilson Jones ¡°Snap¡± Scratch Pad Binder Tool for Ring Binders,West,California,Los Angeles,90049,2012/3/8,2012/3/13,-106.421,273.05
+59686,0.01,5.8,5.59,3004,Maurice Everett,Regular Air,Office Supplies,Binders and Binder Accessories,Wilson Jones ï¿½ï¿½Snapï¿½ï¿½ Scratch Pad Binder Tool for Ring Binders,West,California,Los Angeles,90049,2012/3/8,2012/3/13,-106.421,273.05
 4771,0.04,31.76,45.51,699,Jenny Gold,Delivery Truck,Furniture,Tables,Hon iLevel? Computer Training Table,West,California,Los Angeles,90041,2013/12/13,2013/12/15,-126.47,271.86
-17155,0,6.88,2,553,Kristine Connolly,Express Air,Office Supplies,Paper,"Adams Phone Message Book, 200 Message Capacity, 8 1/16¡± x 11¡±",West,California,Los Angeles,90008,2010/1/28,2010/1/29,34.068,267.53
+17155,0,6.88,2,553,Kristine Connolly,Express Air,Office Supplies,Paper,"Adams Phone Message Book, 200 Message Capacity, 8 1/16ï¿½ï¿½ x 11ï¿½ï¿½",West,California,Los Angeles,90008,2010/1/28,2010/1/29,34.068,267.53
 36647,0.1,9.71,9.45,699,Jenny Gold,Regular Air,Office Supplies,Storage & Organization,Filing/Storage Totes and Swivel Casters,West,California,Los Angeles,90041,2010/6/30,2010/7/3,-119.77,261.93
 1222,0.08,5.28,5.57,2491,Sean N Boyer,Regular Air,Office Supplies,Paper,Xerox 1981,West,California,Los Angeles,90045,2011/2/4,2011/2/4,-121.91,257.39
 15300,0.05,5.28,5.06,553,Kristine Connolly,Express Air,Office Supplies,Paper,Astroparche? Fine Business Paper,West,California,Los Angeles,90008,2012/2/8,2012/2/10,-75.25,257.25
@@ -754,7 +754,7 @@ OrderID,Discount,UnitPrice,ShippingCost,CustomerID,CustomerName,ShipMode,Product
 50656,0.01,500.98,56,2571,Rosemary O'Brien,Delivery Truck,Furniture,Chairs & Chairmats,Global Troy? Executive Leather Low-Back Tilter,East,New York,New York City,10165,2010/10/25,2010/10/26,4260.112,29718.53
 33287,0,270.97,28.06,2382,Geoffrey Saunders,Delivery Truck,Technology,Office Machines,Epson LQ-570e Dot Matrix Printer,East,New York,New York City,10024,2012/4/22,2012/4/25,3909.33,13257.34
 30048,0.06,180.98,55.24,1488,Anthony Goodwin,Delivery Truck,Office Supplies,Appliances,Avanti 4.4 Cu. Ft. Refrigerator,East,New York,New York City,10045,2012/6/13,2012/6/15,433.63,12883.06
-7079,0.01,280.98,57,478,Michael Wiggins,Delivery Truck,Furniture,Chairs & Chairmats,Hon 2090 ¡°Pillow Soft¡± Series Mid Back Swivel/Tilt Chairs,East,New York,New York City,10177,2011/2/8,2011/2/9,-416.7,12296.49
+7079,0.01,280.98,57,478,Michael Wiggins,Delivery Truck,Furniture,Chairs & Chairmats,Hon 2090 ï¿½ï¿½Pillow Softï¿½ï¿½ Series Mid Back Swivel/Tilt Chairs,East,New York,New York City,10177,2011/2/8,2011/2/9,-416.7,12296.49
 47109,0.06,128.24,12.65,3251,Peter Brooks,Regular Air,Furniture,Chairs & Chairmats,SAFCO Folding Chair Trolley,East,New York,New York City,10112,2012/9/11,2012/9/13,1844.96,12002.16
 44099,0.1,367.99,19.99,68,Scott Bunn,Regular Air,Office Supplies,Binders and Binder Accessories,Ibico Ibimaster 300 Manual Binding System,East,New York,New York City,10177,2013/3/12,2013/3/14,4592.737,11823.52
 53350,0.08,315.98,19.99,3121,Bob Dickens,Regular Air,Office Supplies,Binders and Binder Accessories,GBC ProClick? 150 Presentation Binding System,East,New York,New York City,10013,2013/6/14,2013/6/14,2595.1775,10569.92
@@ -1212,7 +1212,7 @@ OrderID,Discount,UnitPrice,ShippingCost,CustomerID,CustomerName,ShipMode,Product
 19042,0.07,40.98,7.47,1280,Harold Albright,Regular Air,Office Supplies,Binders and Binder Accessories,"Wilson Jones Ledger-Size, Piano-Hinge Binder, 2"", Blue",West,Washington,Seattle,98119,2010/3/1,2010/3/2,54.9015,327.61
 32869,0.06,8.12,2.83,698,Nelson Hensley,Regular Air,Technology,Computer Peripherals,"Imation Neon Mac Format Diskettes, 10/Pack",West,Washington,Seattle,98105,2010/3/27,2010/3/28,-82.83,322.03
 33540,0.1,9.85,4.82,308,Glen Caldwell,Regular Air,Office Supplies,Pens & Art Supplies,Lumber Crayons,West,Washington,Seattle,98115,2012/6/6,2012/6/10,-27.15,318.32
-37895,0.1,21.98,8.32,308,Glen Caldwell,Regular Air,Office Supplies,Paper,Standard Line? ¡°While You Were Out¡± Hardbound Telephone Message Book,West,Washington,Seattle,98115,2013/3/30,2013/4/2,24.2,304.65
+37895,0.1,21.98,8.32,308,Glen Caldwell,Regular Air,Office Supplies,Paper,Standard Line? ï¿½ï¿½While You Were Outï¿½ï¿½ Hardbound Telephone Message Book,West,Washington,Seattle,98115,2013/3/30,2013/4/2,24.2,304.65
 37760,0.01,8.33,1.99,308,Glen Caldwell,Regular Air,Technology,Computer Peripherals,"80 Minute Slim Jewel Case CD-R , 10/Pack - Staples",West,Washington,Seattle,98115,2010/8/14,2010/8/15,10.74,280.62
 49927,0.08,7.59,4,2565,Amanda Kay,Regular Air,Furniture,Office Furnishings,"Master Giant Foot? Doorstop, Safety Yellow",West,Washington,Seattle,98144,2013/7/20,2013/7/22,13.44,277.9
 2209,0.08,4.28,0.94,2645,Ronnie Dodson,Regular Air,Office Supplies,Pens & Art Supplies,Newell 336,West,Washington,Seattle,98103,2013/7/9,2013/7/9,25.88,245.26
@@ -1251,7 +1251,7 @@ OrderID,Discount,UnitPrice,ShippingCost,CustomerID,CustomerName,ShipMode,Product
 7203,0.03,896.99,19.99,2867,Dana Teague,Regular Air,Office Supplies,Binders and Binder Accessories,GBC DocuBind TL300 Electric Binding System,East,District of Columbia,Washington,20016,2013/1/8,2013/1/10,3718.5392,24362.25
 50726,0,200.98,23.76,2867,Dana Teague,Delivery Truck,Furniture,Chairs & Chairmats,"Global Leather Highback Executive Chair with Pneumatic Height Adjustment, Black",East,District of Columbia,Washington,20016,2012/10/31,2012/11/4,2025.6,18291.95
 3841,0.05,205.99,8.99,1733,Nina Horne Kelly,Express Air,Technology,Telephones and Communication,StarTAC 8000,East,District of Columbia,Washington,20012,2013/10/4,2013/10/6,1680.228,15296.41
-57216,0.03,280.98,57,2867,Dana Teague,Delivery Truck,Furniture,Chairs & Chairmats,Hon 2090 ¡°Pillow Soft¡± Series Mid Back Swivel/Tilt Chairs,East,District of Columbia,Washington,20016,2011/7/29,2011/7/29,-545.82,15208.34
+57216,0.03,280.98,57,2867,Dana Teague,Delivery Truck,Furniture,Chairs & Chairmats,Hon 2090 ï¿½ï¿½Pillow Softï¿½ï¿½ Series Mid Back Swivel/Tilt Chairs,East,District of Columbia,Washington,20016,2011/7/29,2011/7/29,-545.82,15208.34
 58917,0.01,499.99,24.49,1733,Nina Horne Kelly,Regular Air,Technology,Copiers and Fax,Sharp AL-1530CS Digital Copier,East,District of Columbia,Washington,20012,2013/3/2,2013/3/3,6279.18,14300.26
 21572,0.03,194.3,11.54,3342,Paul Tate,Regular Air,Furniture,Office Furnishings,Electrix Halogen Magnifier Lamp,East,District of Columbia,Washington,20006,2010/2/13,2010/2/15,2861.01,8549.04
 31872,0.09,159.31,60,3342,Paul Tate,Delivery Truck,Furniture,Tables,Hon Non-Folding Utility Tables,East,District of Columbia,Washington,20006,2011/9/6,2011/9/10,-265.122,8163.19

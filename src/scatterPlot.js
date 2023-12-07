@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-var margin = { top: 20, right: 70, bottom: 30, left: 50 },
+var margin = { top: 20, right: 70, bottom: 50, left: 50 },
     width = 500 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -25,9 +25,7 @@ var svg = d3
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // Get the data
-d3.csv("../data/superstore-csv.csv", function loadCallback(error, data) {
-    if (error) throw error;
-
+d3.csv("../data/superstore-subset.csv").then(function (data) {
     // List of groups
     var allGroup = d3
         .map(data, function (d) {
@@ -37,7 +35,7 @@ d3.csv("../data/superstore-csv.csv", function loadCallback(error, data) {
 
     var year = d3
         .map(data, function (d) {
-            return d.OrderDate.split("/")[2];
+            return d.OrderDate.split("/")[0];
         })
         .keys()
         .sort();
@@ -45,7 +43,7 @@ d3.csv("../data/superstore-csv.csv", function loadCallback(error, data) {
 
     var cust = d3
         .map(data, function (d) {
-            return d["Customer"];
+            return d["CustomerName"];
         })
         .keys();
 
@@ -66,14 +64,14 @@ d3.csv("../data/superstore-csv.csv", function loadCallback(error, data) {
     svg.append("text")
         .attr("text-anchor", "end")
         .attr("x", width / 2 + margin.left)
-        .attr("y", height + margin.top + 10)
+        .attr("y", height + margin.top + 14)
         .text("Sales");
 
     // Y axis label:
     svg.append("text")
         .attr("text-anchor", "end")
         .attr("transform", "rotate(-90)")
-        .attr("y", -margin.left + 20)
+        .attr("y", -margin.left + 18)
         .attr("x", -margin.top - height / 2 + 20)
         .text("Profit");
 
@@ -84,7 +82,7 @@ d3.csv("../data/superstore-csv.csv", function loadCallback(error, data) {
         .keys();
     var color = d3.scaleOrdinal().domain(region).range(d3.schemeSet2);
     const getDate = (string) =>
-        (([month, day, year]) => ({ day, month, year }))(string.split("/"));
+        (([year, month, day]) => ({ day, month, year }))(string.split("/"));
 
     // Scale the range of the data
     x.domain([
@@ -124,20 +122,23 @@ d3.csv("../data/superstore-csv.csv", function loadCallback(error, data) {
         .attr("stroke", "black")
         .on("mouseover", function (d) {
             var html =
-                "<br><b>Customer Name:<b/><b>" +
-                d.Customer +
-                "</br>Region: <b/><b>" +
+                "</br>Customer Name: " +
+                d.CustomerName +
+                "</br>Region: " +
                 d.Region +
-                "</br>Sales: </b></b>" +
+                "</br>Sales: " +
                 d.Sales +
-                "</b></br>Profit: <b/><b>" +
+                "</br>Profit: " +
                 d.Profit +
-                "</b>";
+                "</br>";
 
             tooltip
                 .html(html)
-                .style("left", d3.event.pageX + 15 + "px")
-                .style("top", d3.event.pageY - 28 + "px")
+                .css(css)
+                .style("left", d3.event.pageX + 7 + "px")
+                .style("top", d3.event.pageY - 14 + "px")
+                .style("font-family", "Onest")
+                .style("font-weight", "bold")
                 .transition()
                 .duration(200)
                 .style("opacity", 1);
