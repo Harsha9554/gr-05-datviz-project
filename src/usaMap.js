@@ -148,7 +148,6 @@ var app = new Vue({
             this.minProfit = d3.min(currentData, (state) => state.value.profit);
             var maxSales = d3.max(currentData, (state) => state.value.sales);
             var minSales = d3.min(currentData, (state) => state.value.sales);
-            // 颜色定义域
             salesColors.domain([minSales, maxSales]).nice();
             d3.select("#map")
                 .selectAll("path")
@@ -207,19 +206,19 @@ var app = new Vue({
         },
         setYear(year) {
             this.currentYear = year;
-            d3.select("#years-group")
-                .selectAll(".el-button")
-                .attr("class", "el-button el-button--default");
-            d3.select("#button-" + year).attr(
-                "class",
-                "el-button el-button--primary"
-            );
+            d3.select("#years-group").selectAll(".el-button");
+            d3.select("#button-" + year);
             this.updateMap();
             if (this.currentState != null) {
                 this.drawLineChart();
                 this.drawBarChart();
                 this.drawPieChart();
             }
+            var newYear = year;
+            var otherSelect = document.getElementById("selectButton");
+            otherSelect.value = newYear;
+            var changeEvent = new Event("change");
+            otherSelect.dispatchEvent(changeEvent);
         },
         setType(t) {
             this.currentType = t;

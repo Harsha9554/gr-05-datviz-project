@@ -134,7 +134,6 @@ d3.csv("../data/superstore-subset.csv").then(function (data) {
 
             tooltip
                 .html(html)
-                .css(css)
                 .style("left", d3.event.pageX + 7 + "px")
                 .style("top", d3.event.pageY - 14 + "px")
                 .style("font-family", "Onest")

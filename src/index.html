@@ -31,7 +31,7 @@
         <div class="p-2 m-2">
             <span id='years-group' class="text-xl">
                 Year:
-                <select v-model="selectedYear" @change="setYear(selectedYear)" class="text-xl">
+                <select v-model="selectedYear" @change="setYear(selectedYear)" class=" text-xl">
                     <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
                 </select>
                 <button id="button-All" @click="setYear('All')"
