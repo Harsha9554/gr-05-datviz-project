@@ -6,20 +6,17 @@ const salesColors = d3
 const profitColors = d3
     .scaleQuantize()
     .range([
-        "#D32F2F",
-        "#E53935",
-        "#F44336",
-        "#EF5350",
-        "#E57373",
-        "#EF9A9A",
-        "#BBDEFB",
-        "#90CAF9",
-        "#64B5F6",
-        "#42A5F5",
-        "#2196F3",
-        "#1E88E5",
+        "#dec9e9",
+        "#c19ee0",
+        "#815ac0",
+        "#6247aa",
+        "#ff4800",
+        "#ff6d00",
+        "#ff9e00",
+        "#ffb600",
     ]);
-profitColors.domain([-1, 1]);
+"#ff8500", profitColors.domain([-1, 1]);
+
 Number.prototype.formatMoney = function (c, d, t) {
     var n = this,
         c = isNaN((c = Math.abs(c))) ? 2 : c,
@@ -94,6 +91,7 @@ var app = new Vue({
                 this.drawMap();
                 this.initData();
                 this.setYear(this.currentYear);
+                this.drawBarChart();
             });
         });
     },
@@ -210,7 +208,6 @@ var app = new Vue({
             d3.select("#button-" + year);
             this.updateMap();
             if (this.currentState != null) {
-                this.drawLineChart();
                 this.drawBarChart();
                 this.drawPieChart();
             }
@@ -224,7 +221,6 @@ var app = new Vue({
             this.currentType = t;
             this.updateMap();
             if (this.currentState != null) {
-                this.drawLineChart();
                 this.drawBarChart();
                 this.drawPieChart();
             }
@@ -278,6 +274,148 @@ var app = new Vue({
                         return floorMoney(range[0]);
                     });
             }
+        },
+        drawBarChart() {
+            function aggBar(groups) {
+                var sales = 0.0;
+                var profit = 0.0;
+                groups.forEach((e) => {
+                    profit += +e["Profit"];
+                    sales += +e["Sales"];
+                });
+                return {
+                    profit: profit,
+                    sales: sales,
+                };
+            }
+            var currentData = d3
+                .nest()
+                .key((e) => e["State"])
+                .rollup(this.aggMap)
+                .entries(this.csvDataThisYear())
+                .filter((e) => e.key == this.currentState);
+            var row = ["x"];
+            var col = ["profit"];
+            if (currentData.length > 0) {
+                currentData = d3
+                    .nest()
+                    .key((e) => e["ProductSubCategory"])
+                    .rollup(aggBar)
+                    .entries(currentData[0].values)
+                    .sort(function (a, b) {
+                        return b.value.profit - a.value.profit;
+                    });
+
+                currentData.forEach((e) => {
+                    row.push(e.key);
+                    col.push(e.value.profit);
+                });
+            }
+            var barChart = bb.generate({
+                title: {
+                    text:
+                        this.currentYear +
+                        " products profit of " +
+                        this.currentState,
+                },
+                data: {
+                    columns: [row, col],
+                    x: "x",
+                    groups: [["profit"]],
+                    color: (color, d) => {
+                        c = profitColors(
+                            d.value > 0
+                                ? d.value / this.maxProfit
+                                : -d.value / this.minProfit
+                        );
+                        return c;
+                    },
+                    //order: "desc",
+                    type: "bar",
+                },
+                axis: {
+                    x: {
+                        type: "category",
+                        tick: {
+                            text: {
+                                show: true,
+                            },
+                        },
+                    },
+                },
+                legend: {
+                    show: false,
+                },
+                bindto: "#bar-chart",
+            });
+        },
+        drawPieChart() {
+            function aggBar(groups) {
+                var sales = 0.0;
+                var profit = 0.0;
+                groups.forEach((e) => {
+                    profit += +e["Profit"];
+                    sales += +e["Sales"];
+                });
+                return {
+                    profit: profit,
+                    sales: sales,
+                };
+            }
+            var currentData = d3
+                .nest()
+                .key((e) => e["State"])
+                .rollup(this.aggMap)
+                .entries(this.csvDataThisYear())
+                .filter((e) => e.key == this.currentState);
+            var cols = [];
+            if (currentData.length > 0) {
+                currentData = d3
+                    .nest()
+                    .key((e) => e["ProductSubCategory"])
+                    .rollup(aggBar)
+                    .entries(currentData[0].values)
+                    .sort(function (a, b) {
+                        return b.value.profit - a.value.profit;
+                    });
+
+                currentData.forEach((e) => {
+                    cols.push([e.key, e.value.sales]);
+                });
+            }
+            var pieChart = bb.generate({
+                title: {
+                    text:
+                        this.currentYear +
+                        " product sales % of " +
+                        this.currentState,
+                },
+                data: {
+                    columns: cols,
+                    //order: "desc",
+                    type: "pie",
+                    color: (color, d) => {
+                        var v = null;
+                        if (typeof d == "object") {
+                            v = currentData.find((e) => e.key == d.id).value
+                                .profit;
+                        } else {
+                            v = currentData.find((e) => e.key == d).value
+                                .profit;
+                        }
+                        return profitColors(
+                            v > 0 ? v / this.maxProfit : -v / this.minProfit
+                        );
+                    },
+                },
+                legend: {
+                    show: true,
+                },
+                bindto: "#pie-chart",
+            });
+            d3.select("#pie-chart")
+                .selectAll(".bb-legend-item")
+                .on("click", null);
         },
     },
 });

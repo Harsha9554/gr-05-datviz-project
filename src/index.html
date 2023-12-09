@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../dist/styles/index.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://naver.github.io/billboard.js/release/1.9.2/dist/billboard.css"></script>
     <script>
         tailwind.config = {
 
@@ -25,16 +26,16 @@
 
 <body>
     <div id="app">
-        <div class="text-3xl text-gray-800 p-2 m-2 bg-orange-400 rounded-sm">
+        <div class="text-xl text-gray-800 p-2 mx-2 mt-1 bg-orange-400 rounded-sm">
             Superstore Data Visualization Dashboard
         </div>
-        <div class="p-2 m-2">
-            <span id='years-group' class="text-xl">
+        <div class="p-2 mx-2 mt-1">
+            <span id='years-group' class="text-sm">
                 Year:
                 <select v-model="selectedYear" @change="setYear(selectedYear)" class=" text-xl">
                     <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
                 </select>
-                <button class="p-2 m-2 bg-orange-400 rounded-sm " id="button-All" @click="setYear('All')" style="">
+                <button class="p-2  bg-orange-400 rounded-sm " id="button-All" @click="setYear('All')" style="">
                     All
                 </button>
                 <br>
@@ -47,7 +48,32 @@
                 <label for="sales">Sales</label>
             </span>
         </div>
-        <div class="flex h-screen">
+        <div class="flex h-1/4">
+            <div id='maparea' class="w-2/3 flex">
+                <div style="position: relative; width: 1280px; height: 480px;">
+                    <div id='svg-container' class="flex-grow" style="width: 100%; height: 100%;">
+                        <svg width="100%" height="130%" viewBox="0 0 1280 960" preserveAspectRatio="xMidYMid meet"
+                            id='map'></svg>
+                    </div>
+                    <div id='legend' class="w-1/4" style="position: absolute; top: 75px; right: -30px;"></div>
+                </div>
+            </div>
+            <div class="m-2 p-2 text-xl w-1/3" id="the-scatter-plot-id">
+                <label for="Year">Year:</label>
+                <select style="text-align: center" id="selectButton"></select>
+                <div style="text-align: center" id="myscatterplot"></div>
+            </div>
+        </div>
+        <div class="flex h-1/4">
+            <div class="text-sm w-1/3 flex">
+                <div id='bar-chart'></div>
+            </div>
+            <div class="text-sm w-2/3">
+                <div id='pie-chart'></div>
+            </div>
+        </div>
+
+        <!-- <div class="flex h-screen">
             <div id='maparea' class="w-4/6 flex">
                 <div style="position: relative; width: 1280px; height: 960px;">
                     <div id='svg-container' class="flex-grow" style="width: 100%; height: 100%; margin: 0px 50px">
@@ -63,36 +89,19 @@
                 <div style="text-align: center" id="myscatterplot"></div>
             </div>
         </div>
-        <span></span>
-        <!-- <div class="flex h-screen">
-            <div id='maparea' class="w-1/2 flex">
-                <!-- <div id='svg-container' class="flex-grow">
-                    <svg id="map"></svg>
-                </div> -->
-        <!-- <div style="position: relative; width: 600px; height: 400px;">
-                    <div id='svg-container' class=flex-grow"" style="width: 100%; height: 100%;">
-                        <svg width="100%" height="100%" viewBox="0 0 1280 960" preserveAspectRatio="xMidYMid meet"
-                            id='map'></svg>
-                    </div>
-                    <div id='legend' class="w-1/4">
-                    </div>
-                </div> -->
-        <!-- </div>
-            <div class="m-2 p-2 text-xl w-1/2" id="the-scatter-plot-id">
-                <label for="Year">Year:</label>
-                <select style="text-align: center" id="selectButton"></select>
-                <div style="text-align: center" id="myscatterplot"></div>
+        <div class="flex h-screen">
+            <div class="w-1/3 flex">
+                <div id='bar-chart'></div>
+            </div>
+            <div class="text-xl w-2/3">
+                <div id='pie-chart'></div>
             </div>
         </div> -->
-
-
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/billboard.js/3.10.3/billboard.min.js'
-        integrity='sha512-DDZ9iKsJXSMtsRhFxhiyvAPgzzuax98I/O9aSWIXbysd2rlWzlYwmhKgPL9roH9jfbCkmhl7V0xqiha8jmWRAA=='
-        crossorigin='anonymous'></script>
+    <script src="https://naver.github.io/billboard.js/release/1.9.2/dist/billboard.js"></script>
     <script type="text/javascript" src="./usaMap.js"></script>
     <script type="text/javascript" src="./scatterPlot.js"></script>
 </body>

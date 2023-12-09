@@ -80,7 +80,10 @@ d3.csv("../data/superstore-subset.csv").then(function (data) {
             return d.Region;
         })
         .keys();
-    var color = d3.scaleOrdinal().domain(region).range(d3.schemeSet2);
+    var color = d3
+        .scaleOrdinal()
+        .domain(region)
+        .range(["#001427", "#708d81", "#f4d58d", "#bf0603"]);
     const getDate = (string) =>
         (([year, month, day]) => ({ day, month, year }))(string.split("/"));
 
@@ -122,8 +125,6 @@ d3.csv("../data/superstore-subset.csv").then(function (data) {
         .attr("stroke", "black")
         .on("mouseover", function (d) {
             var html =
-                "</br>Customer Name: " +
-                d.CustomerName +
                 "</br>Region: " +
                 d.Region +
                 "</br>Sales: " +
