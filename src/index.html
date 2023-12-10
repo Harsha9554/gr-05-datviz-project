@@ -1,39 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../dist/styles/output.css" />
-        <title>Superstore Data Visualization Dashboard</title>
-    </head>
-    <body class="">
-        <div class="text-3xl text-gray-800 p-2 m-2 bg-slate-400 rounded-sm">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/styles/index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://naver.github.io/billboard.js/release/1.9.2/dist/billboard.css"></script>
+    <script>
+        tailwind.config = {
+
+            content: ["./src/**/*.{html,js}"],
+            theme: {
+                extend: {},
+                fontFamily: {
+                    sans: ["Onest", "Helvetica"],
+                },
+            },
+            plugins: [],
+
+        }
+    </script>
+    <title>Superstore Data Visualization Dashboard</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="text-xl text-gray-800 p-2 mx-2 mt-1 bg-orange-400 rounded-sm">
             Superstore Data Visualization Dashboard
         </div>
-        <div class="rounded">
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">Basic Info</div>
-                <p class="text-gray-800 text-base">
-                    The project title is
-                    <b>Superstore Data Visualization Dashboard.</b> Our names
-                    are
-                    <b
-                        >Kanish Vijay Arunkumar, Sai Sriharsha Griddaluru, and
-                        Tejdeep Uckoo</b
-                    >. Our e-mail addresses are
-                    <b
-                        >kanish@clemson.edu, sgridda@clemson.edu, and
-                        tejdeep@clemson.edu.</b
-                    >
-                    Our CIDs are <b>12345678, C15358926, and 13572468</b>. The
-                    link to our project repository is
-                    <a
-                        class="underline"
-                        href="https://github.com/Harsha9554/gr-05-datviz-project"
-                        >click here.</a
-                    >
-                </p>
+        <div class="p-2 mx-2 mt-1">
+            <span id='years-group' class="text-sm">
+                Year:
+                <select v-model="selectedYear" @change="setYear(selectedYear)" class=" text-xl">
+                    <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
+                </select>
+                <button class="p-2  bg-orange-400 rounded-sm " id="button-All" @click="setYear('All')" style="">
+                    All
+                </button>
+                <br>
+                <input type="radio" name="currentType" id="profit" value="profit" v-model="currentType"
+                    @change="setType('profit')">
+                <label for="profit">Profit</label>
+
+                <input type="radio" name="currentType" id="sales" value="sales" v-model="currentType"
+                    @change="setType('sales')">
+                <label for="sales">Sales</label>
+            </span>
+        </div>
+        <div class="flex h-1/4">
+            <div id='maparea' class="w-2/3 flex">
+                <div style="position: relative; width: 1280px; height: 480px;">
+                    <div id='svg-container' class="flex-grow" style="width: 100%; height: 100%;">
+                        <svg width="100%" height="130%" viewBox="0 0 1280 960" preserveAspectRatio="xMidYMid meet"
+                            id='map'></svg>
+                    </div>
+                    <div id='legend' class="w-1/4" style="position: absolute; top: 75px; right: -30px;"></div>
+                </div>
+            </div>
+            <div class="m-2 p-2 text-xl w-1/3" id="the-scatter-plot-id">
+                <label for="Year">Year:</label>
+                <select style="text-align: center" id="selectButton"></select>
+                <div style="text-align: center" id="myscatterplot"></div>
             </div>
         </div>
-    </body>
+        <div class="flex h-1/4">
+            <div class="text-sm w-1/3 flex">
+                <div id='bar-chart'></div>
+            </div>
+            <div class="text-sm w-2/3">
+                <div id='pie-chart'></div>
+            </div>
+        </div>
+
+        <!-- <div class="flex h-screen">
+            <div id='maparea' class="w-4/6 flex">
+                <div style="position: relative; width: 1280px; height: 960px;">
+                    <div id='svg-container' class="flex-grow" style="width: 100%; height: 100%; margin: 0px 50px">
+                        <svg width="100%" height="100%" viewBox="0 0 1280 960" preserveAspectRatio="xMidYMid meet"
+                            id='map'></svg>
+                    </div>
+                    <div id='legend' class="w-1/4" style="position: absolute; top: 150px; right: -30px;"></div>
+                </div>
+            </div>
+            <div class="m-2 p-2 text-xl w-2/6" id="the-scatter-plot-id">
+                <label for="Year">Year:</label>
+                <select style="text-align: center" id="selectButton"></select>
+                <div style="text-align: center" id="myscatterplot"></div>
+            </div>
+        </div>
+        <div class="flex h-screen">
+            <div class="w-1/3 flex">
+                <div id='bar-chart'></div>
+            </div>
+            <div class="text-xl w-2/3">
+                <div id='pie-chart'></div>
+            </div>
+        </div> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
+    <script src="https://naver.github.io/billboard.js/release/1.9.2/dist/billboard.js"></script>
+    <script type="text/javascript" src="./usaMap.js"></script>
+    <script type="text/javascript" src="./scatterPlot.js"></script>
+</body>
+
 </html>

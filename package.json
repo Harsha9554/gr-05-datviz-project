@@ -1,11 +1,13 @@
 {
     "name": "gr-05-datviz-project",
     "version": "1.0.0",
-    "main": "index.js",
-    "scripts": {},
+    "main": "./src/index.html",
+    "scripts": {
+        "build": "postcss ./src/styles.css -o ./dist/styles.css"
+    },
     "license": "MIT",
     "dependencies": {
         "postcss": "^8.4.31",
-        "tailwindcss": "^3.3.3"
+        "tailwindcss": "^3.3.5"
     }
 }
