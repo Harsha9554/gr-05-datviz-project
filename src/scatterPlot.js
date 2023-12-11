@@ -8,8 +8,6 @@ var x = d3.scaleLinear().range([0, width]);
 var y = d3.scaleLinear().range([height, 0]);
 
 // append the svg obgect to the body of the page
-// appends a 'group' element to 'svg'
-// moves the 'group' element to the top left margin
 var tooltip = d3
     .select("#myscatterplot")
     .append("div")
@@ -87,18 +85,22 @@ d3.csv("../data/superstore-subset.csv").then(function (data) {
     const getDate = (string) =>
         (([year, month, day]) => ({ day, month, year }))(string.split("/"));
 
+    var profitMax = d3.max(data, function (d) {
+        return Math.abs(+d.Profit);
+    });
+
+    var salesMax = d3.max(data, function (d) {
+        return +d.Sales;
+    });
+
     // Scale the range of the data
     x.domain([
         0,
         d3.max(data, function (d) {
-            return +d.Sales;
+            return 40000;
         }),
     ]);
-    y.domain(
-        d3.extent(data, function (d) {
-            return +d.Profit;
-        })
-    );
+    y.domain([-profitMax, profitMax]);
 
     // Add the valueline path.
     const scatter = svg
@@ -183,7 +185,7 @@ d3.csv("../data/superstore-subset.csv").then(function (data) {
 
     // Add the X Axis
     svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + height / 2 + ")")
         .call(d3.axisBottom(x));
 
     // Add the Y Axis
